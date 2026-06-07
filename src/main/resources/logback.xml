@@ -1,0 +1,35 @@
+<configuration>
+
+    <!-- Console Appender com cores -->
+    <appender name="COLORED_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d{dd-MM-yyyy // HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Global file appender (vendas2.log) - recebe TODOS os logs -->
+    <appender name="VENDAS2_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/vendas2.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/vendas2.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- Limite de tamanho por arquivo -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- Mantém histórico de 10 dias -->
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+<!--        <pattern>%d{dd-MM-yyyy // HH:mm:ss.SSS} %-5level %class.%method - %msg-%n</pattern>-->
+            <pattern>%d{dd-MM-yyyy // HH:mm:ss.SSS} %-5level %logger{36} - %msg-%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger: envia todos os logs para o console e para logs/vendas2.log -->
+    <root level="DEBUG">
+        <appender-ref ref="COLORED_CONSOLE"/>
+        <appender-ref ref="VENDAS2_FILE"/>
+    </root>
+
+</configuration>

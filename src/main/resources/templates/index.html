@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exemplo de ajax sem jquery</title>
+</head>
+
+<body>
+<h1>Teste de ajax com javascript puro</h1>
+
+<form action="/iniciarestart" method="get">
+	<button id= "btn" type="submit">Restart database</button>
+</form>
+
+<div class="container">
+	<ul class="list"></ul>
+</div>
+
+<script>
+	setInterval(function() {
+		var xhr = new XMLHttpRequest();
+		console.log("ponto 1");
+		//xhr.open("GET", "http://localhost:8090/api/cli/log");
+		xhr.open("GET", "https://viacep.com.br/ws/88040400/json", true);
+		xhr.responseType = "json";
+		xhr.onreadystatechange = function () {
+			console.log("ponto 2");
+			if(xhr.readyState == 4 && xhr.status == 200) {
+				console.log(xhr.readyState + "\n" + xhr.status + "\n" + JSON.parse(xhr.responseText));
+	    		}
+		}
+		xhr.send;
+		//xhr.onreadystatechange = function() {
+		//	console.log("ponto 3");
+		//	if(xhr.readyState === 4 && xhr.status === 200) {
+		//		console.log(xhr.readyState + "\n" + xhr.status + "\n" + JSON.parse(xhr.responseText));
+		//	} else {
+		//		console.log(xhr.readyState + "\n" + xhr.status + "\n***************************");
+		//	}
+		//}
+	}, 2000);
+</script>
+</body>
+</html>
