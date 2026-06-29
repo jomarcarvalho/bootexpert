@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-@RestController
+/**
+ * troquei @RestController por @Controller por sugestão da IA
+ */
+@Controller
 @RequestMapping("/api/mapping")
 public class MappingController {
 
@@ -105,11 +109,11 @@ public class MappingController {
 		return nomeappproperties;
 	}
 	
-	@RequestMapping(value="/")
-	@ResponseBody
-	public String raiz(){
-		return "este texto esta em MappingController.java";
-	}
+//	@RequestMapping(value="/")
+//	@ResponseBody
+//	public String raiz(){
+//		return "este texto esta em MappingController.java";
+//	}
 	
 	@GetMapping(value="/hello")
 	public String hello(){

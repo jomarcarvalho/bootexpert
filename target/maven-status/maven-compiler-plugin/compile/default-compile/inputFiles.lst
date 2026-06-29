@@ -29,5 +29,6 @@ C:\treino\bootexpert\src\main\java\vendas2\controller\ProdutoController.java
 C:\treino\bootexpert\src\main\java\vendas2\configuracao\Configuracao.java
 C:\treino\bootexpert\src\main\java\vendas2\modelo\Cliente.java
 C:\treino\bootexpert\src\main\java\vendas2\timer\TimeWatch.java
+C:\treino\bootexpert\src\main\java\vendas2\controller\ViewController.java
 C:\treino\bootexpert\src\main\java\vendas2\modelo\dto\ClienteCreatedResponseDTO.java
 C:\treino\bootexpert\src\main\java\vendas2\modelo\dto\ClienteCreateErrorResponseDTO.java

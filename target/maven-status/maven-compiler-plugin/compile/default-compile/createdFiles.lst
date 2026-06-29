@@ -15,6 +15,7 @@ vendas2\dao\ItemPedidoDAO.class
 vendas2\modelo\dto\PedidoDTO.class
 vendas2\modelo\Pedido.class
 vendas2\controller\ClienteController.class
+vendas2\controller\ViewController.class
 vendas2\modelo\dto\PScreenDTO.class
 vendas2\dao\PedidoDtoDAO.class
 vendas2\VendasApplication.class
